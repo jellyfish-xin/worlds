@@ -16,7 +16,12 @@ import * as directives from 'vuetify/directives'
 // https://stackoverflow.com/questions/57053728/vuetify-icon-not-showing
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
+// @vueuse/head
+// https://vueuse.org/add-ons.html#head-vueuse-head
+import { createHead } from '@vueuse/head'
+
 const app = createApp(App)
+const head = createHead()
 
 const vuetify = createVuetify({
   components,
@@ -33,5 +38,6 @@ const vuetify = createVuetify({
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)
+app.use(head)
 
 app.mount('#app')
