@@ -9,7 +9,7 @@ const meduseRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: 'méduse',
       description: 'méduse',
-      href: '/yellow.ico'
+      href: '/worlds/public/yellow.ico'
     }
   }
 ]

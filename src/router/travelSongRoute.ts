@@ -9,7 +9,7 @@ const travelSongRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: '旅歌',
       description: '旅歌',
-      href: '/blue.ico'
+      href: '/worlds/public/blue.ico'
     }
   }
 ]
