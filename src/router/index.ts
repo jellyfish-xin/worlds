@@ -41,4 +41,7 @@ router.beforeEach((to, _from, next) => {
   next()
 })
 
+import routeName from '@/router/routeName'
+export { routeName }
+
 export default router

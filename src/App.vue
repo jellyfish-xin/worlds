@@ -1,87 +1,42 @@
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <v-app>
+    <v-app-bar elevation="0"></v-app-bar>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <v-main>
+      <RouterView />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/omega">ω</RouterLink>
-        <RouterLink to="/meduse">méduse</RouterLink>
-        <RouterLink to="/travelSong">旅歌</RouterLink>
-      </nav>
-    </div>
-  </header>
+      <v-speed-dial class="speed-dial" location="top center" transition="scale-transition">
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-fab v-bind="activatorProps" size="large" icon="$vuetify"></v-fab>
+        </template>
 
-  <RouterView />
+        <v-btn key="1" icon="mdi-success" @click="router.push({ name: routeName.omega })">
+          ω
+        </v-btn>
+        <v-btn key="2" icon="mdi-plus" @click="router.push({ name: routeName.meduse })">
+          méduse
+        </v-btn>
+        <v-btn key="3" icon="mdi-warning" @click="router.push({ name: routeName.travelSong })">
+          旅歌
+        </v-btn>
+      </v-speed-dial>
+    </v-main>
+
+    <v-footer>2024</v-footer>
+  </v-app>
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { useRouter } from 'vue-router'
+import { routeName } from '@/router'
+
+const router = useRouter()
 </script>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+<style lang="scss">
+.speed-dial {
+  position: fixed;
+  bottom: 40;
+  right: 40;
 }
 </style>
