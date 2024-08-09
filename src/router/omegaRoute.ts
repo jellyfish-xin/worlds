@@ -9,7 +9,7 @@ const omegaRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: 'ω',
       description: 'ω',
-      href: '/worlds/public/red.ico'
+      href: '/red.ico'
     }
   }
 ]
