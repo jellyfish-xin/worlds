@@ -1,28 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar elevation="0"></v-app-bar>
-
     <v-main>
       <RouterView />
-
-      <v-speed-dial class="speed-dial" location="top center" transition="scale-transition">
-        <template v-slot:activator="{ props: activatorProps }">
-          <v-fab v-bind="activatorProps" size="large" icon="$vuetify"></v-fab>
-        </template>
-
-        <v-btn key="1" icon="mdi-success" @click="router.push({ name: routeName.omega })">
-          ω
-        </v-btn>
-        <v-btn key="2" icon="mdi-plus" @click="router.push({ name: routeName.meduse })">
-          méduse
-        </v-btn>
-        <v-btn key="3" icon="mdi-warning" @click="router.push({ name: routeName.travelSong })">
-          旅歌
-        </v-btn>
-      </v-speed-dial>
     </v-main>
 
-    <v-footer>2024</v-footer>
+    <v-speed-dial class="world-view-list" location="top center" transition="scale-transition">
+      <template v-slot:activator="{ props: activatorProps }">
+        <v-fab v-bind="activatorProps" size="large" icon="$vuetify"></v-fab>
+      </template>
+
+      <v-btn
+        v-for="(item, index) in worldViewItems"
+        :key="index"
+        :icon="item.icon"
+        @click="router.push({ name: item.value })"
+      >
+      </v-btn>
+    </v-speed-dial>
+
+    <v-footer>
+      <span class="copyright"> © 2024 jellyfish.xin </span>
+    </v-footer>
   </v-app>
 </template>
 
@@ -31,12 +29,11 @@ import { useRouter } from 'vue-router'
 import { routeName } from '@/router'
 
 const router = useRouter()
-</script>
 
-<style lang="scss">
-.speed-dial {
-  position: fixed;
-  bottom: 40;
-  right: 40;
-}
-</style>
+const worldViewItems = [
+  { label: '旅歌', icon: 'mdi-numeric-3-box-outline', value: routeName.travelSong },
+  { label: 'méduse', icon: 'mdi-numeric-2-box-outline', value: routeName.meduse },
+  { label: 'ω', icon: 'mdi-numeric-1-box-outline', value: routeName.omega },
+  { label: 'Home', icon: 'mdi-numeric-1-box-outline', value: routeName.home }
+]
+</script>
