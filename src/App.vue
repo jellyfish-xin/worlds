@@ -17,10 +17,6 @@
       >
       </v-btn>
     </v-speed-dial>
-
-    <v-footer>
-      <span class="copyright"> © 2024 jellyfish.xin </span>
-    </v-footer>
   </v-app>
 </template>
 

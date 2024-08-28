@@ -1,13 +1,22 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="home-page">
     <v-row>
-      <v-col cols="8">
+      <v-col cols="12" md="8">
         <h1 class="about-title">About</h1>
-        <p></p>
+
+        <v-icon>mdi-email-outline</v-icon>
+        <p>kurage.xin@gmail.com</p>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <v-row>
-          <v-col cols="12" v-for="(item, index) in socialPlatformItems" :key="index">
+          <v-col
+            cols="12"
+            md="12"
+            sm="6"
+            class="social-platform"
+            v-for="(item, index) in socialPlatformItems"
+            :key="index"
+          >
             <v-card
               class="social-platform-list"
               :prepend-avatar="item.prependAvatar"
@@ -15,7 +24,7 @@
               :subtitle="item.subtitle"
             >
               <v-card-actions>
-                <v-btn append-icon="mdi-open-in-new" @click="follow(item.url)">Follow</v-btn>
+                <v-btn icon="mdi-open-in-new" @click="follow(item.url)" />
               </v-card-actions>
             </v-card>
           </v-col>
@@ -23,6 +32,10 @@
       </v-col>
     </v-row>
   </v-container>
+
+  <v-footer class="home-footer">
+    <span class="copyright"> © 2024 jellyfish.xin </span>
+  </v-footer>
 </template>
 
 <script setup lang="ts">
@@ -36,7 +49,7 @@ const socialPlatformItems = [
   {
     prependAvatar: '/clibo-icon.png',
     title: 'Clibo',
-    subtitle: '@jellyfish_xin',
+    subtitle: '@xin',
     url: 'https://clibo.tw/users/xin'
   }
 ]
