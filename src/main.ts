@@ -14,6 +14,7 @@ import * as directives from 'vuetify/directives'
 
 // Icons
 // https://stackoverflow.com/questions/57053728/vuetify-icon-not-showing
+import '@mdi/font/css/materialdesignicons.css'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 // @vueuse/head
