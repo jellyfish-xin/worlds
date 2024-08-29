@@ -24,13 +24,14 @@
             </p>
 
             <div class="social-platform">
-              <button v-for="(item, index) in socialPlatformItems" :key="index">
-                <v-avatar
-                  class="social-platform-list"
-                  :image="item.logo"
-                  @click="openInNew(item.url)"
-                />
-              </button>
+              <v-btn
+                v-for="(item, index) in socialPlatformItems"
+                :key="index"
+                icon
+                class="social-platform-list"
+              >
+                <v-avatar :image="item.logo" @click="openInNew(item.url)" />
+              </v-btn>
             </div>
           </v-col>
         </v-row>
@@ -61,7 +62,7 @@
 </template>
 
 <script setup lang="ts">
-import { routeName } from '@/router';
+import { routeName } from '@/router'
 
 const tagItems = ['原創', '設定', '世界觀']
 
