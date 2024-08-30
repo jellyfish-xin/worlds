@@ -1,0 +1,58 @@
+$color1: #faf9c8;
+$color2: #ebc05d;
+$color3: #fb5e4a;
+$color4: #9b4227;
+$color5: #0cb8aa;
+$color6: #44636e;
+
+// .v-row {
+//   border: solid 3px green !important;
+// }
+
+// .v-col {
+//   border: solid 3px purple !important;
+// }
+
+.meduse-header {
+  //   border: solid 5px red !important;
+
+  height: 80px !important;
+  justify-content: center;
+  background-color: $color1 !important;
+  box-shadow: 0 0 !important;
+}
+
+.meduse-page {
+  //   border: solid 5px blue !important;
+
+  padding: 5vh 8vw !important;
+
+  background-color: $color1;
+  min-height: calc(100vh - 100px);
+  padding: 8vh 8vw 3vh !important;
+  display: flex;
+  align-items: center;
+
+  .menu {
+    display: flex;
+    justify-content: center !important;
+
+    .menu-list {
+      .v-card-title {
+        font-size: 5rem;
+        color: $color2 !important;
+      }
+      .v-card-subtitle {
+        color: $color4 !important;
+      }
+    }
+  }
+}
+
+.meduse-footer {
+  //   border: solid 5px yellow !important;
+
+  padding: 1vh 8vw !important;
+  height: 200px !important;
+  background-color: $color4 !important;
+}
